@@ -3,12 +3,18 @@
 // ==============================================================================================
 // aliases type
 // memberi alias kepada sebuah type
+// menggunakan type atau interface
 // ==============================================================================================
 
 type Person = {
   nama: string;
   umur: number;
 };
+
+interface Person2 {
+  nama: string;
+  umur: 20;
+}
 
 let bambang: Person = {
   nama: "Bambang",
@@ -18,6 +24,7 @@ let bambang: Person = {
 // ==============================================================================================
 // union type
 // bekerja seperti "OR" pada type ( | )
+// tidak berlaku untuk interface
 // ==============================================================================================
 
 type Hewan = "Mamalia" | "Amfibi" | "Unggas";
@@ -27,6 +34,7 @@ let ayam: Hewan = "Unggas";
 // ==============================================================================================
 // intersection type
 // bekerja seperti "AND" pada type ( & )
+// tidak berlaku untuk interface
 // ==============================================================================================
 
 type Karyawan = {
