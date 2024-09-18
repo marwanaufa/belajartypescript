@@ -62,3 +62,50 @@ console.log(userName.toUpperCase());
 let a = Symbol("a");
 let b: symbol = Symbol("a");
 console.log(a === b); // false. symbol menghasilkan unique identifier. meskipun nilai yang dimasukan sama, tapi hasilnya benar2 unik dan tidak sama.
+
+// ==============================================================================================
+// object
+// ==============================================================================================
+
+// Cara 1 : diatur langsung pada variabelnya
+let person: {
+  nama: string; // wajib diisi
+  umur: number; // wajib diisi
+  alamat?: string; // opsional dengan tambahan tanda ? pada nama key
+} = {
+  nama: "Bambang",
+  umur: 25,
+};
+
+let daftarKursiBus: {
+  [nomorKursi: string]: string; // untuk key yang memiliki nama fleksibel
+} = {
+  "1A": "Bambang",
+  "1B": "Yanto",
+  "2A": "Yuni",
+  "2B": "Yanti",
+};
+
+// Cara 2 : menggunakan type aliases
+type Human = {
+  nama: string;
+  umur: number;
+  alamat?: string;
+};
+
+let human: Human = {
+  nama: "Bambang",
+  umur: 25,
+};
+
+// Cara 3 : menggunakan interface
+interface People {
+  nama: string;
+  umur: number;
+  alamat?: string;
+}
+
+let people: People = {
+  nama: "Bambang",
+  umur: 25,
+};
